@@ -1,0 +1,89 @@
+\documentclass[aps,prl,twocolumn,nofootinbib,letterpaper]{revtex4}
+
+\usepackage{amsmath} % need for subequations
+\usepackage{graphicx} % need for figures
+\usepackage{verbatim} % useful for program listings
+\usepackage{color} % use if color is used in text
+\usepackage{subfigure} % use for side-by-side figures
+\usepackage{hyperref} % use for hypertext links, including those to external documents and URLs
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\title{Brief summary of calculation for dipole moment and wavefunction in linearly polarized fields in strong-field approximation}
+\author{Wei-Chun Chu}
+\date{\today}
+
+\maketitle
+
+The semi-classical strong field approximation (SFA)~\cite{lewenstein} is applied to a single-electron system driven by an arbitrary linearly-polarized, finite-duration external electric field. The ground state is approximated by a hydrogenic atom, where the only adjustable parameter is the ionization threshold $I_p$. The ionized electrons are approximated by plane waves. The construction of dipole response is de-composed to three steps--tunnel ionization, free-electron evolution, and recombination, so the low-frequency response, which mainly comes from multiphoton ionization, cannot be trusted. However, with the separable steps and the optionally calculated total wave function, the SFA result is easier than first principle calculations to analyze.
+
+In the following we only go through the calculation procedure of our model but leave the detailed theory in Ref.~\cite{lewenstein}. All descriptions here are in atomic units unless otherwise specified. Note that we define the dipole with the electronic charge $q=-1$ so our sign conventions are different from those in Ref.~\cite{lewenstein}.
+
+The calculation is based on the form of the total wave function
+\begin{equation}
+| \Psi(t) \rangle = e^{iI_p t} \left[ c_g(t) | g \rangle + \int{c_v(t) | v \rangle dv} \right], \label{eq:wavefunc}
+\end{equation}
+where $g$ and $v$ indicate ground and free (ionized) states respectively.
+
+\section{Dipole moment}
+
+With the saddle-point approximation over the canonical momentum $p$, the stationary canonical momentum and action are given by
+\begin{eqnarray}
+p_{st}(t,\tau) &=& -\frac{1}{\tau} \int_{t-\tau}^{t} {A(t')dt'}, \label{eq:pst} \\
+S_{st}(t,\tau) &=& \int_{t-\tau}^{t} { \left\{ \frac{1}{2} \left[ p_{st}(t,\tau)+A(t') \right]^2 + I_p \right\} dt'}. \label{eq:Sst}
+\end{eqnarray}
+where $A(t)$ is the vector potential of the given external field and $I_p$ is the binding energy of the system. Eqs.~(\ref{eq:pst}) and (\ref{eq:Sst}) represent the momentum and action for the dominant trajectory, where other trajectories are smeared and cancelled by fast phase oscillation.
+
+We then define ``rescattering functions'' $H_1(t,\tau)$ and $H_2(t,\tau)$, which represent the 3-step-process contribution from time $\tau$ to time $t$. $H_1(t,\tau)$ is given by
+\begin{eqnarray}
+H_1(t,\tau) = \left( \frac{\pi}{\epsilon+i\tau/2} \right)^{\frac{3}{2}} \mu \left[ p_{st}(t,\tau) + A(t) \right]   \notag\\
+\times E(t-\tau) e^{-i S_{st}(t,\tau)} \mu^* \left[ p_{st}(t,\tau) + A(t-\tau) \right] , \label{eq:H1}
+\end{eqnarray}
+where $\epsilon$ is an infinitesimal value, $\mu(v) \equiv q \langle \psi_v |x| \psi_g \rangle$ is the dipole matrix element between the ground state and the free-electron state of velocity $v$, $E(t)$ is the external electric field, and the dipole matrix elements $\mu(v)$ as a function of momentum $v$ are defined by assuming a hydrogen-like ground state and plane waves for free electrons:
+\begin{equation}
+\mu(v)=-\frac{i \sqrt{128 B^5}}{\pi} \frac{v}{(v^2+B^2)^3}. \label{eq:mu}
+\end{equation}
+$H_2(t)$ is defined by the same formula in Eq.~(\ref{eq:H1}) except that $\mu \left[ p_{st}(t,\tau) + A(t) \right]$ is replaced by $\mu^* \left[ p_{st}(t,\tau) + A(t) \right]$. In practice, $\epsilon$ is a small number tuning toward 0 until the calculation converges.
+
+With the straightforward calculation of the $H$ functions, the ground state coefficient can be carried out by solving
+\begin{equation}
+\dot{c}_g(t) = E(t) \int_{\tau_{min}}^{\tau_{max}}{ H_1(t,\tau) c_g(t-\tau) d\tau }, \label{eq:cg}
+\end{equation}
+which also gives the time-dependent ionization probability. The dipole moment is given by
+\begin{equation}
+D(t) = i c_g^*(t)  \int_{\tau_{min}}^{\tau_{max}}{ H_2(t,\tau) c_g(t-\tau) d\tau } + c.c. \label{eq:D}
+\end{equation}
+In theory the range of the integration over $\tau$ should be from 0 to infinity. However in the calculation we set the range flexible for reducing the calculation cost or for model testing.
+
+The single-atom radiation signal in this work is defined by the intensity of the dipole radiation, which is proportional to $|R(t)|^2$ in the time domain where the dipole acceleration is $R(t)=dJ(t)/dt=d^2 D(t)/dt^2$, and to $|\tilde{R}(\omega)|^2$ in the spectral domain where $\tilde{R}(\omega)$ is the Fourier transform of $R(t)$.
+
+
+
+
+\section{Wave function}
+
+The original theoretical paper~\cite{lewenstein} had no intention to calculate the total wave function since its main strength lies on the saddle point approximation, which picks only the dominant trajectories out of the whole electron cloud. By removing the saddle-point approximation, the calculation for the wave function compatible with the SFA dipole moment is time-consuming but straightforward.
+
+By plugging Eq.(\ref{eq:wavefunc}) into the Schr{\"o}dinger equation, the free-electron coefficients are given by
+\begin{equation}
+c_v(t) = i\int_{0}^{\infty} {E(t-\tau)\mu[v-A(t)+A(t-\tau)] e^{-iS_v(t,\tau)}d\tau}, \label{eq:cv}
+\end{equation}
+where the action is
+\begin{equation}
+S_v(t,\tau) = \int_{t-\tau}^{t} {\left\{ \frac{1}{2} \left[ v-A(t)+A(t') \right]^2 + I_p \right\} dt'}. \label{eq:Sv}
+\end{equation}
+We have ignored the ground state depletion and assumed $c_g(t)=1$ for Eqs.~(\ref{eq:cv}) and (\ref{eq:Sv}) for faster computation. The actual depletion of ground state can be calculated by Eq.(\ref{eq:cg}) to determine whether its negletion is acceptable or not.
+
+Note that no saddle-point approximation is used here, which means that the wave function describes the whole electron cloud in the time evolution instead of only the electron trajectories specified by the stationary momentum and action in Eq.(\ref{eq:pst}) and Eq.(\ref{eq:Sst}), respectively. The wave function amplitude in space is
+\begin{equation}
+\left\langle x|\Psi(t) \right\rangle = e^{iI_pt} \left[ \psi_g(x) + \int{c_v(t)\psi_v(x)dv} \right], \label{eq:wavex}
+\end{equation}
+where $\psi_g(x)$ and $\psi_v(x)$ are the ground and free electron wave functions, respectively. The probability density in space that evolves with time is $|\langle x| \Psi(t) \rangle|^2$. While in theory the integration range of $v$ in Eq.~(\ref{eq:wavex}) should be the entire $v$ space, practically one should apply Eq.~(\ref{eq:cv}) to know the wave function distribution in momentum space over the whole physical time, and confine the integration range of Eq.~(\ref{eq:wavex}) appropriately.
+
+\begin{thebibliography}{}
+\bibitem{lewenstein} M. Lewenstein, Ph. Balcou, M. Yu. Ivanov, Anne L’Huillier, and P. B. Corkum, Phys. Rev. A 49, 2117 (1994).
+\end{thebibliography}
+
+
+\end{document}
