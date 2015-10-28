@@ -9,7 +9,7 @@ The model is based on the semi-classical strong-field approximation
 (SFA) by Lewenstein et. al. [M. Lewenstein, Ph. Balcou, M. Yu. Ivanov,
 Anne L'Huillier, and P. B. Corkum, Phys. Rev. A 49, 2117 (1994)].
 
-Simply compile sfaq.tex with latex to read a short description of the
+Simply compile sfaq.tex with latex to read the short description of the
 algorithm used in the code.
 
 All codes are written in FORTRAN 90 and OpenMP. A sample compilation
