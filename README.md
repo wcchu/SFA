@@ -1,4 +1,5 @@
-# Brief summary of calculation for dipole moment and wavefunction in linearly polarized fields in strong-field approximation
+# Brief summary of calculation for dipole moment and wavefunction in
+# linearly polarized fields in strong-field approximation
 
 by Wei-Chun Chu
 version 1.0 (2015)
