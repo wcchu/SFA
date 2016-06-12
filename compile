@@ -1,0 +1,4 @@
+gfortran -openmp -fdefault-real-8 -fdefault-double-8 const.f interp.f sfaqdip.f -o sfaqdip.x
+gfortran -openmp -fdefault-real-8 -fdefault-double-8 const.f interp.f sfaqwave.f -o sfaqwave.x
+gfortran -openmp -fdefault-real-8 -fdefault-double-8 const.f spectr.f -o spectr.x
+gfortran -openmp -fdefault-real-8 -fdefault-double-8 const.f timefreq.f -o timefreq.x
