@@ -1,7 +1,6 @@
 # Dipole moment & wavefunction in strong-field approximation
 
-by Wei-Chun Chu
-version 1.0 (2015)
+by Wei-Chun Chu (2015)
 
 This code is to calculate dipole moment and wave function of simple
 atomic systems driven by an arbitrary linearly polarized electric field.
