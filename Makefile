@@ -13,3 +13,5 @@ spectr.x: const.f spectr.f
 
 timefreq.x: const.f timefreq.f
 	gfortran ${OMP} ${REAL} ${DOUBLE} const.f timefreq.f -o timefreq.x
+
+all: sfaqdip.x sfaqwave.x spectr.x timefreq.x

@@ -4,4 +4,4 @@ This code is to calculate dipole moment and wave function of simple atomic syste
 
 Simply compile sfaq.tex with latex to read the short description of the algorithm used in the code.
 
-All codes are written in FORTRAN 90 and OpenMP. Compile all executables with _make executable_. Example configuration files are in the folder "examples".
+All codes are written in FORTRAN 90 and OpenMP. Compile all executables with `make all`. Example configuration files are in the folder "examples".
